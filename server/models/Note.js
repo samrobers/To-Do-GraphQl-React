@@ -1,13 +1,15 @@
-const { Schema, Model } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const NoteSchema = new Schema(
   {
-    title: String,
-    required: True,
+    title: {
+      type: String,
+    },
   },
   {
-    description: String,
-    required: True,
+    description: {
+      type: String,
+    },
   }
 );
 

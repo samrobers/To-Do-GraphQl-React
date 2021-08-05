@@ -1,7 +1,11 @@
 const { Profile } = require("../models");
-const { Note } = require("../models");
-
+const { signToken } = require("../utils/auth");
 const resolvers = {
+  Query: {
+    profiles: async () => {
+      return await Profile.find();
+    },
+  },
   Mutation: {
     signUp: async (parent, { email, password }) => {
       const profile = await Profile.create({ email, password });
@@ -26,3 +30,5 @@ const resolvers = {
     },
   },
 };
+
+module.exports = resolvers;
