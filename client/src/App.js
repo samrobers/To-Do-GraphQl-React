@@ -8,7 +8,8 @@ import {
   useQuery,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import Landing from "./pages/Landing";
+
+import { LandingPage } from "./pages/Landing";
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -31,7 +32,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Route exact path="/" component={Landing} />
+        <Route exact path="/" component={LandingPage} />
       </Router>
     </ApolloProvider>
   );
